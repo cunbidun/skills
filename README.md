@@ -13,5 +13,4 @@ Each skill has its own directory containing `SKILL.md` and any supporting files.
 | `recall` | Retrieve earlier decisions and preferences from memory. |
 | `reconsider` | Reassess assumptions and incorporate a different angle. |
 | `remember` | Save durable lessons, decisions, and preferences. |
-| `survey-merge` | Assess how to combine branches while preserving intent. |
 | `trace` | Trace behavior through concrete actors, calls, and observed effects. |
