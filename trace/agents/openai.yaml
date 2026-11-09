@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trace"
+  short_description: "Trace actors, values, waits, and effects"
+  default_prompt: "Use $trace to show the actual actors, values, waits, saved records, and effects in this flow."
