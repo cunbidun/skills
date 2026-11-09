@@ -39,6 +39,22 @@ Keep a test only when all four answers are concrete:
 - What meaningful consequence would the user or caller experience?
 - Why does this test catch something a stronger retained test would miss?
 
+Check the scenario, the assertions, and what the mocks replace:
+
+- **Realistic scenarios.** Trace inputs, saved state, dependency responses, and failure conditions back to supported
+  behavior. Check that the setup preserves the constraints and interactions that matter in real use. A test built on
+  impossible state or convenient fake behavior gives little confidence in the actual system.
+- **Behavior over implementation details.** Test a stable promise to the user or caller. A correct internal refactor
+  should keep the test passing; breaking that promise should make it fail. Prefer observable results over reproducing
+  each implementation step or asserting private call sequences. A small unit test can protect that promise without
+  requiring an end-to-end test.
+- **Mocks that do not hide broken behavior.** Inspect what each mock bypasses and which real decisions remain under
+  test. Prefer mocking external boundaries and using real local collaborators where practical. Ask what plausible
+  broken implementation would still pass because the mocks supply the expected result. Deeply nested mock chains
+  are a reason to reconsider the test boundary or design, rather than add more setup just to reach a line. Check
+  important assumptions about mocked dependencies against their actual behavior or existing contract coverage;
+  report missing evidence. Reaching a line does not prove the promised behavior works.
+
 Could the test be justified from the intended behavior without knowing the latest bug or patch? A recent regression can reveal an enduring rule, but the patch itself is not a reason to preserve a test.
 
 Prefer deletion for tests that mirror implementation, prove mock configuration, lock in private structure or incidental wording, duplicate stronger checks, cover unsupported paths, or can pass while the promised behavior is broken. Distinct cases earn separate tests when they can fail independently and matter.
