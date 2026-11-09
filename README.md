@@ -7,6 +7,7 @@ Each skill has its own directory containing `SKILL.md` and any supporting files.
 | --- | --- |
 | `cleantests` | Review design smells and test value; simplify test suites. |
 | `cr` | Review proposed changes in any review system with repository history in mind. |
+| `design-review` | Review designs against current code and overlooked cases; feedback only, no solutions. |
 | `grill-me` | Stress-test plans and designs through consequential trade-offs. |
 | `recall` | Retrieve earlier decisions and preferences from memory. |
 | `remember` | Save durable lessons, decisions, and preferences. |
